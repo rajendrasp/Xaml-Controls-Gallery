@@ -40,9 +40,7 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="itemGridView.Padding" Value="0,0,0,36" />
-                        <Setter Target="headerImageView.Margin" Value="-12,0,-12,12" />
                         <Setter Target="itemGridView.ItemContainerStyle" Value="{StaticResource IndentedGridViewItemStyleSmall}" />
-                        <Setter Target="pageHeader.Visibility" Value="Collapsed" />
                         <Setter Target="smallHeaderText.Visibility" Value="Visible"/>
                     </VisualState.Setters>
                 </VisualState>
@@ -64,41 +62,7 @@
             Loaded="OnItemGridViewLoaded"
             SizeChanged="OnItemGridViewSizeChanged"
             SelectionMode="None">
-            <interactivity:Interaction.Behaviors>
-                <behavior:ImageScrollBehavior TargetControl="{Binding ElementName=pageHeader}" />
-            </interactivity:Interaction.Behaviors>
-
-            <GridView.Header>
-                <Grid Margin="-12,0,-12,24" Height="250">
-                    <ParallaxView
-                        x:Name="headerImageView"
-                        Height="250"
-                        Margin="0,0,0,0"
-                        Source="{x:Bind itemGridView}"
-                        VerticalShift="350">
-                        <Image
-                            x:Name="headerImage"
-                            HorizontalAlignment="Center"
-                            Source="Assets/MainPage_Banner.jpg"
-                            Stretch="UniformToFill" />
-                    </ParallaxView>
-                    <Rectangle Height="60" VerticalAlignment="Top" Fill="{StaticResource HeroImageGradientBrush}"/>
-                    <TextBlock x:Name="smallHeaderText"
-                               Visibility="Collapsed"
-                               Style="{StaticResource NarrowHeaderTextBlockStyle}"                               
-                               Text="{StaticResource NewControlsName}"/>
-                </Grid>
-            </GridView.Header>
-
-            <GridView.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate x:DataType="local:GroupInfoList">
-                            <TextBlock Text="{x:Bind Title}" Style="{StaticResource SubtitleTextBlockStyle}"/>
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </GridView.GroupStyle>
+            
         </GridView>
 
         <local:PageHeader x:Name="pageHeader"

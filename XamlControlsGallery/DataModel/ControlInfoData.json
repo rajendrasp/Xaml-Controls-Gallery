@@ -1,18 +1,18 @@
 {
   "Groups": [
     {
-      "UniqueId": "NewControls",
-      "Title": "What's New",
+      "UniqueId": "Market",
+      "Title": "Market",
       "Subtitle": "",
-      "ImagePath": "",
+      "ImagePath": "",
       "Description": "",
       "Items": []
     },
     {
-      "UniqueId": "AllControls",
-      "Title": "All controls",
+      "UniqueId": "Trade",
+      "Title": "Trade",
       "Subtitle": "",
-      "ImagePath": "",
+      "ImagePath": "",
       "Description": "",
       "Items": []
     },
@@ -324,7 +324,7 @@
       "UniqueId": "Collections",
       "Title": "Collections",
       "Subtitle": "",
-      "ImagePath": "",
+      "ImagePath": "\uE80A",
       "Description": "",
       "Items": [
         {

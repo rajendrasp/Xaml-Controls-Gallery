@@ -67,8 +67,8 @@
 
             <Thickness x:Key="ControlElementScreenshotModePadding">67</Thickness>
 
-            <x:String x:Key="ControlsName">All controls</x:String>
-            <x:String x:Key="NewControlsName">What's New</x:String>
+            <x:String x:Key="ControlsName">Trade</x:String>
+            <x:String x:Key="NewControlsName">Market</x:String>
 
             <Style x:Key="OutputTextBlockStyle" BasedOn="{StaticResource BodyTextBlockStyle}" TargetType="TextBlock">
                 <Setter Property="Margin" Value="8,8,0,0" />

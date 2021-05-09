@@ -160,7 +160,7 @@ namespace AppUIBasics
 
         private void AddNavigationMenuItems()
         {
-            foreach (var group in ControlInfoDataSource.Instance.Groups.OrderBy(i => i.Title))
+            foreach (var group in ControlInfoDataSource.Instance.Groups)
             {
                 var itemGroup = new Microsoft.UI.Xaml.Controls.NavigationViewItem() { Content = group.Title, Tag = group.UniqueId, DataContext = group, Icon = GetIcon(group.ImagePath) };
 
@@ -184,11 +184,11 @@ namespace AppUIBasics
 
                 NavigationViewControl.MenuItems.Add(itemGroup);
 
-                if (group.UniqueId == "AllControls")
+                if (group.UniqueId == "Trade")
                 {
                     this._allControlsMenuItem = itemGroup;
                 }
-                else if (group.UniqueId == "NewControls")
+                else if (group.UniqueId == "Market")
                 {
                     this._newControlsMenuItem = itemGroup;
                 }
@@ -221,13 +221,19 @@ namespace AppUIBasics
 
         private static IconElement GetIcon(string imagePath)
         {
-            return imagePath.ToLowerInvariant().EndsWith(".png") ?
-                        (IconElement)new BitmapIcon() { UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute) , ShowAsMonochrome = false} :
-                        (IconElement)new FontIcon()
-                        {
-                            FontFamily = new FontFamily("Segoe MDL2 Assets"),
-                            Glyph = imagePath
-                        };
+            if (imagePath.ToLowerInvariant().EndsWith(".png"))
+            {
+                var uri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                return (IconElement)new BitmapIcon() { UriSource = uri, ShowAsMonochrome = false };
+            }
+            else
+            {
+                return (IconElement)new FontIcon()
+                {
+                    FontFamily = new FontFamily("Segoe MDL2 Assets"),
+                    Glyph = imagePath
+                };
+            }
         }
 
         private void SetDeviceFamily()

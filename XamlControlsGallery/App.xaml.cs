@@ -128,7 +128,7 @@ namespace AppUIBasics
 
             ThemeHelper.Initialize();
 
-            Type targetPageType = typeof(NewControlsPage);
+            Type targetPageType = typeof(SettingsPage);
             string targetPageArguments = string.Empty;
 
             if (args.Kind == ActivationKind.Launch)
